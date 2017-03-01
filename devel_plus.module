@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function devel_plus_menu_links_discovered_alter(&$links) {
+  if (\Drupal::moduleHandler()->moduleExists('admin_toolbar_tools')) {
+    $links['admin_toolbar_tools.devel_plus'] = array(
+      'title' => t('Plus'),
+      'route_name' => 'devel_plus',
+      'menu_name' => 'admin',
+      'parent' => 'admin_development',
+      'weight' => '100',
+    );
+
+    $links['admin_toolbar_tools.devel_plus.routes'] = array(
+      'title' => t('Routes'),
+      'description' => t('List of all route definitions.'),
+      'route_name' => 'devel_plus.routes',
+      'menu_name' => 'admin',
+      'parent' => 'admin_toolbar_tools.devel_plus',
+    );
+    $links['admin_toolbar_tools.devel_plus.views_data'] = array(
+      'title' => t('Views data'),
+      'description' => t('List of all views data definitions.'),
+      'route_name' => 'devel_plus.views_data',
+      'menu_name' => 'admin',
+      'parent' => 'admin_toolbar_tools.devel_plus',
+    );
+  }
+}

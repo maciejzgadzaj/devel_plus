@@ -1,0 +1,31 @@
+devel_plus:
+  path: '/devel/plus'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Devel Plus'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'access devel information'
+
+devel_plus.routes:
+  path: '/devel/plus/routes'
+  defaults:
+    _controller: '\Drupal\devel_plus\Controller\DevelPlusController::routesPage'
+    _title: 'Routes'
+    _description: 'List of all route definitions.'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'access devel information'
+
+devel_plus.views_data:
+  path: '/devel/plus/views_data'
+  defaults:
+    _controller: '\Drupal\devel_plus\Controller\DevelPlusController::viewsDataPage'
+    _title: 'Views data'
+    _description: 'List of all views data definitions.'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'access devel information'

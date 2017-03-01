@@ -1,0 +1,11 @@
+devel_plus.routes:
+  title: 'Routes'
+  description: 'List of all route definitions.'
+  route_name: devel_plus.routes
+  menu_name: devel
+
+devel_plus.views_data:
+  title: 'Views data'
+  description: 'List of all views data definitions.'
+  route_name: devel_plus.views_data
+  menu_name: devel
