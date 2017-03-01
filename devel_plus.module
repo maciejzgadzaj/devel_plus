@@ -13,6 +13,13 @@ function devel_plus_menu_links_discovered_alter(&$links) {
       'weight' => '100',
     );
 
+    $links['admin_toolbar_tools.devel_plus.queues'] = array(
+      'title' => t('Queues'),
+      'description' => t('List of all queue definitions.'),
+      'route_name' => 'devel_plus.queues',
+      'menu_name' => 'admin',
+      'parent' => 'admin_toolbar_tools.devel_plus',
+    );
     $links['admin_toolbar_tools.devel_plus.routes'] = array(
       'title' => t('Routes'),
       'description' => t('List of all route definitions.'),

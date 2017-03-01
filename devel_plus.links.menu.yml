@@ -1,3 +1,9 @@
+devel_plus.queues:
+  title: 'Queues'
+  description: 'List of all queue definitions.'
+  route_name: devel_plus.queues
+  menu_name: devel
+
 devel_plus.routes:
   title: 'Routes'
   description: 'List of all route definitions.'

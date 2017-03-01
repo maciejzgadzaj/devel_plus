@@ -8,6 +8,16 @@ devel_plus:
   requirements:
     _permission: 'access devel information'
 
+devel_plus.queues:
+  path: '/devel/plus/queues'
+  defaults:
+    _controller: '\Drupal\devel_plus\Controller\DevelPlusController::queuesPage'
+    _title: 'Queues'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'access devel information'
+
 devel_plus.routes:
   path: '/devel/plus/routes'
   defaults:

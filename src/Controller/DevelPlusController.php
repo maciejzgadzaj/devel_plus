@@ -10,6 +10,23 @@ use Drupal\Core\Controller\ControllerBase;
 class DevelPlusController extends ControllerBase {
 
   /**
+   * Builds the queues overview page.
+   *
+   * @return array
+   *   Array of page elements to render.
+   */
+  public function queuesPage() {
+    /** @var \Drupal\advancedqueue\Queue\AdvancedQueueWorkerManager $queue_worker_manager */
+    $queue_worker_manager = \Drupal::service('plugin.manager.queue_worker');
+    $queue_workers = [];
+    foreach ($queue_worker_manager->getDefinitions() as $queue_name => $queue_info) {
+      /** @var \Drupal\advancedqueue\Queue\AdvancedQueueWorkerInterface $queue_worker */
+      $queue_workers[$queue_name] = $queue_worker_manager->createInstance($queue_name);
+    }
+    return \Drupal::service('devel.dumper')->exportAsRenderable($queue_workers);
+  }
+
+  /**
    * Builds the routes overview page.
    *
    * @return array
