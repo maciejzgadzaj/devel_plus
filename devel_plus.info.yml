@@ -1,0 +1,7 @@
+name: Devel Plus
+description: Moar devel!
+package: Development
+core: 8.x
+type: module
+dependencies:
+  - devel
