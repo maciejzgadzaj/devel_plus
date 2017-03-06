@@ -10,6 +10,18 @@ use Drupal\Core\Controller\ControllerBase;
 class DevelPlusController extends ControllerBase {
 
   /**
+   * Builds the field type overview page.
+   *
+   * @return array
+   *   Array of page elements to render.
+   */
+  public function fieldTypesPage() {
+    $field_type_definitions = \Drupal::service('plugin.manager.field.field_type')->getDefinitions();
+    ksort($field_type_definitions);
+    return \Drupal::service('devel.dumper')->exportAsRenderable($field_type_definitions);
+  }
+
+  /**
    * Builds the queues overview page.
    *
    * @return array

@@ -8,6 +8,16 @@ devel_plus:
   requirements:
     _permission: 'access devel information'
 
+devel_plus.field_types:
+  path: '/devel/plus/field-types'
+  defaults:
+    _controller: '\Drupal\devel_plus\Controller\DevelPlusController::fieldTypesPage'
+    _title: 'Field types'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'access devel information'
+
 devel_plus.queues:
   path: '/devel/plus/queues'
   defaults:
