@@ -15,6 +15,15 @@ function devel_plus_menu() {
     'menu_name' => 'devel',
   );
 
+  $items['devel/plus/cron_queues'] = array(
+    'title' => 'Cron queues',
+    'description' => 'View cron queue definitions.',
+    'page callback' => 'devel_plus_cron_queues_page',
+    'access arguments' => array('access devel information'),
+    'file' => 'devel_plus.pages.inc',
+    'menu_name' => 'devel',
+  );
+
   $items['devel/plus/entity_properties'] = array(
     'title' => 'Entity properties',
     'description' => 'View entity property definitions.',

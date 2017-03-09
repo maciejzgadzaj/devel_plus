@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * Menu callback: View cron queue definitions.
+ *
+ * @see devel_plus_menu()
+ */
+function devel_plus_cron_queues_page() {
+  $queues = module_invoke_all('cron_queue_info');
+  drupal_alter('cron_queue_info', $queues);
+  ksort($queues);
+  return kprint_r($queues, TRUE);
+}
+
+/**
  * Menu callback: View entity property definitions.
  *
  * @see devel_plus_menu()
