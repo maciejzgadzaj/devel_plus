@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Menu callback: View Advanced Queue queue definitions.
+ *
+ * @see devel_plus_menu()
+ */
+function devel_plus_advancedqueue_queues_page() {
+  $queues = advancedqueue_get_queues_info();
+  ksort($queues);
+  return kprint_r($queues, TRUE);
+}
+
+/**
  * Menu callback: View cron queue definitions.
  *
  * @see devel_plus_menu()

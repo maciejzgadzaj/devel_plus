@@ -15,6 +15,17 @@ function devel_plus_menu() {
     'menu_name' => 'devel',
   );
 
+  if (module_exists('advancedqueue')) {
+    $items['devel/plus/advancedqueue_queues'] = array(
+      'title' => 'Advanced Queue queues',
+      'description' => 'View Advanced Queue queue definitions.',
+      'page callback' => 'devel_plus_advancedqueue_queues_page',
+      'access arguments' => array('access devel information'),
+      'file' => 'devel_plus.pages.inc',
+      'menu_name' => 'devel',
+    );
+  }
+
   $items['devel/plus/cron_queues'] = array(
     'title' => 'Cron queues',
     'description' => 'View cron queue definitions.',
