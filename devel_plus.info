@@ -1,0 +1,5 @@
+name = Devel Plus
+description = Moar devel!
+core = 7.x
+package = Development
+dependencies[] = devel
