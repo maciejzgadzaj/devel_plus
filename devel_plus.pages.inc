@@ -32,3 +32,14 @@ function devel_plus_permission_info_page() {
 
   return kprint_r($permissions, TRUE);
 }
+
+/**
+ * Menu callback: View views data definitions.
+ *
+ * @see devel_plus_menu()
+ */
+function devel_plus_views_data_page() {
+  $views_data = views_fetch_data();
+  ksort($views_data);
+  return kprint_r($views_data, TRUE);
+}

@@ -33,5 +33,14 @@ function devel_plus_menu() {
     'menu_name' => 'devel',
   );
 
+  $items['devel/plus/views_data'] = array(
+    'title' => 'Views data',
+    'description' => 'View views data definitions.',
+    'page callback' => 'devel_plus_views_data_page',
+    'access arguments' => array('access devel information'),
+    'file' => 'devel_plus.pages.inc',
+    'menu_name' => 'devel',
+  );
+
   return $items;
 }
