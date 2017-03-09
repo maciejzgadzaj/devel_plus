@@ -35,6 +35,17 @@ function devel_plus_entity_properties_page() {
 }
 
 /**
+ * Menu callback: View menu router definitions.
+ *
+ * @see devel_plus_menu()
+ */
+function devel_plus_menu_router_page() {
+  $router = menu_get_router();
+  ksort($router);
+  return kprint_r($router, TRUE);
+}
+
+/**
  * Menu callback: View permission definitions.
  *
  * @see devel_plus_menu()
