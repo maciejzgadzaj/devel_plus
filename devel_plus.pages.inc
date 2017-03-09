@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Menu callback: View entity property definitions.
+ *
+ * @see devel_plus_menu()
+ */
+function devel_plus_entity_properties_page() {
+  $property_info = entity_get_property_info();
+  ksort($property_info);
+  return kprint_r($property_info, TRUE);
+}
+
+/**
  * Menu callback: View permission definitions.
  *
  * @see devel_plus_menu()

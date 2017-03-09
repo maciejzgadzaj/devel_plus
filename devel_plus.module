@@ -15,6 +15,15 @@ function devel_plus_menu() {
     'menu_name' => 'devel',
   );
 
+  $items['devel/plus/entity_properties'] = array(
+    'title' => 'Entity properties',
+    'description' => 'View entity property definitions.',
+    'page callback' => 'devel_plus_entity_properties_page',
+    'access arguments' => array('access devel information'),
+    'file' => 'devel_plus.pages.inc',
+    'menu_name' => 'devel',
+  );
+
   $items['devel/plus/permissions'] = array(
     'title' => 'Permissions',
     'description' => 'View permission definitions.',
