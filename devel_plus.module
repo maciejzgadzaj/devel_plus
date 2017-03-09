@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function devel_plus_menu() {
+  $items = array();
+
+  $items['devel/plus'] = array(
+    'title' => 'Plus',
+    'access arguments' => array('access administration pages'),
+    'page callback' => 'system_admin_menu_block_page',
+    'weight' => 100,
+    'file' => 'system.admin.inc',
+    'menu_name' => 'devel',
+  );
+
+  $items['devel/plus/permissions'] = array(
+    'title' => 'Permissions',
+    'description' => 'View permission definitions.',
+    'page callback' => 'devel_plus_permission_info_page',
+    'access arguments' => array('access devel information'),
+    'file' => 'devel_plus.pages.inc',
+    'menu_name' => 'devel',
+  );
+
+  return $items;
+}
