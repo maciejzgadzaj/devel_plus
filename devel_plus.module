@@ -44,6 +44,15 @@ function devel_plus_menu() {
     'menu_name' => 'devel',
   );
 
+  $items['devel/plus/menu_items'] = array(
+    'title' => 'Menu items',
+    'description' => 'View menu item definitions.',
+    'page callback' => 'devel_plus_menu_items_page',
+    'access arguments' => array('access devel information'),
+    'file' => 'devel_plus.pages.inc',
+    'menu_name' => 'devel',
+  );
+
   $items['devel/plus/menu_router'] = array(
     'title' => 'Menu router',
     'description' => 'View menu router definitions.',

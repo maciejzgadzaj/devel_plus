@@ -37,6 +37,30 @@ function devel_plus_entity_properties_page() {
 /**
  * Menu callback: View menu router definitions.
  *
+ * @see menu_router_build()
+ * @see devel_plus_menu()
+ */
+function devel_plus_menu_items_page() {
+  // Part of menu_router_build().
+  $callbacks = array();
+  foreach (module_implements('menu') as $module) {
+    $router_items = call_user_func($module . '_menu');
+    if (isset($router_items) && is_array($router_items)) {
+      foreach (array_keys($router_items) as $path) {
+        $router_items[$path]['module'] = $module;
+      }
+      $callbacks = array_merge($callbacks, $router_items);
+    }
+  }
+  drupal_alter('menu', $callbacks);
+
+  ksort($callbacks);
+  return kprint_r($callbacks, TRUE);
+}
+
+/**
+ * Menu callback: View menu router definitions.
+ *
  * @see devel_plus_menu()
  */
 function devel_plus_menu_router_page() {
